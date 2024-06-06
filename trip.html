@@ -3,12 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <title>Reisebuchungs-Formular</title>
-
 </head>
 <body>
 
 <h1>Reisebuchungs-Formular</h1>
 
+<form action="https://it.bitz.ch/formdata/index.php" method="post">
+
+  <!-- 1. Abflughafen Auswahl -->
+  <label for="departure-airport">Abflughafen:</label>
+  <select id="departure-airport" name="departure-airport" required>
+    <optgroup label="Deutschland">
+      <option value="frankfurt">Frankfurt</option>
+      <option value="berlin">Berlin</option>
+      <option value="munich">München</option>
+    </optgroup>
+    <optgroup label="Österreich">
+      <option value="vienna">Wien</option>
+    </optgroup>
+    <optgroup label="Italien">
+      <option value="rome">Rom</option>
+      <option value="milan">Mailand</option>
+    </optgroup>
+    <optgroup label="Frankreich">
+      <option value="paris">Paris</option>
+    </optgroup>
+  </select>
+  <br><br>
+
+  <!-- 2. Unterkunft Auswahl -->
+  <label>Unterkunft:</label>
+  <input type="radio" id="hotel" name="accommodation" value="hotel" required>
+  <label for="hotel">Hotel</label>
+  <input type="radio" id="vacation-home" name="accommodation" value="vacation-home">
+  <label for="vacation-home">Ferienwohnung</label>
+  <input type="radio" id="hostel" name="accommodation" value="hostel">
+  <label for="hostel">Hostel</label>
+  <br><br>
+
+  <!-- 3. Zusätzliche Dienstleistungen -->
+  <label>Zusätzliche Dienstleistungen:</label>
+  <input type="checkbox" id="insurance" name="services" value="insurance">
+  <label for="insurance">Reiseversicherung</label>
+  <input type="checkbox" id="transfer" name="services" value="transfer">
+  <label for="transfer">Flughafentransfer</label>
+  <input type="checkbox" id="extra-baggage" name="services" value="extra-baggage">
+  <label for="extra-baggage">Zusätzliches Gepäck</label>
+  <br><br>
+
+  <!-- 4. Reisezeitraum -->
+  <label for="start-date">Reisebeginn:</label>
+  <input type="date" id="start-date" name="start-date" required>
+  <label for="end-date">Reiseende:</label>
+  <input type="date" id="end-date" name="end-date" required>
+  <br><br>
+
+  <!-- 5. Reisedauer -->
+  <label for="duration">Reisedauer (Tage):</label>
+  <input type="number" id="duration" name="duration" min="1" max="21" required>
+  <br><br>
+
+  <!-- 6. Anzahl der reisenden Personen -->
+  <label for="travelers">Anzahl der reisenden Personen:</label>
+  <input type="number" id="travelers" name="travelers" min="1" required>
+  <br><br>
+
+  <!-- 7. Fluggesellschaft -->
+  <label for="airline">Bevorzugte Fluggesellschaft:</label>
+  <select id="airline" name="airline" required>
+    <option value="lufthansa">Lufthansa</option>
+    <option value="swiss">Swiss</option>
+    <option value="austrian">Austrian Airlines</option>
+    <option value="airfrance">Air France</option>
+  </select>
+  <br><br>
+
+  <!-- 8. Weitere optionale Dienstleistungen -->
+  <label>Weitere optionale Dienstleistungen:</label>
+  <input type="checkbox" id="priority-checkin" name="extra-services" value="priority-checkin">
+  <label for="priority-checkin">Priority-Check-In</label>
+  <input type="checkbox" id="extra-handbag" name="extra-services" value="extra-handbag">
+  <label for="extra-handbag">Zusätzliches Handgepäck</label>
+  <input type="checkbox" id="car-rental" name="extra-services" value="car-rental">
+  <label for="car-rental">Mietwagen</label>
+  <br><br>
+
+  <!-- 9. Reiseziel -->
+  <label for="destination">Reiseziel:</label>
+  <input list="destinations" id="destination" name="destination" required>
+  <datalist id="destinations">
+    <option value="Paris">
+    <option value="New York">
+    <option value="Tokyo">
+    <option value="Sydney">
+  </datalist>
+  <br><br>
+
+  <!-- 10. E-Mail Adresse -->
+  <label for="email">E-Mail-Adresse:</label>
+  <input type="email" id="email" name="email" required>
+  <br><br>
+
+  <!-- Reset und Submit Button -->
+  <input type="reset" value="Zurücksetzen">
+  <input type="submit" value="Buchung absenden">
+
+</form>
 
 </body>
 </html>
+sss
